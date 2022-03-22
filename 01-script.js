@@ -13,7 +13,9 @@ inizia.addEventListener("click",
 
 
 function() {
-
+    document.getElementById("griglia").classList.add("griglia")
+    document.getElementById("griglia").classList.remove("none")
+    document.getElementById("benvenuto").classList.add("none")
     let difficolta = document.getElementById("difficolta-id").value;
     let startConteggio = document.getElementById("conteggio").innerHTML = `<span>0</span>`
     grid.innerHTML = ""
