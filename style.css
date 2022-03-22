@@ -1,3 +1,18 @@
+/* RESET E IMPOSTAZIONI GENERALI */
+
+* {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 body {
     display: flex;
     width: 550px;
@@ -39,8 +54,8 @@ select {
     color: white;
     background-color: blue;
     border-radius: 15px;
-   height: 60px;
-   width: 130px;
+   height: 80px;
+   width: 170px;
     border: 2px solid black;
     display: flex;
     align-items: center;
@@ -53,18 +68,27 @@ select {
     height: 10%;
     width: 10%;
     border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box9 {
     height: calc(100% / 9);
     width: calc(100% / 9);
     border: 2px solid black;
+     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box7 {
     height: calc(100% / 7);
     width: calc(100% / 7);
     border: 2px solid black;
+     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box-toccato {

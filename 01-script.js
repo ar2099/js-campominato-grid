@@ -1,37 +1,96 @@
 let inizia = document.getElementById("bottone-difficolta");
 
+let difficolta = document.getElementById("difficolta-id").value ;
+
+console.log(difficolta)
+
+let box = document.createElement("div");
+
+let grid = document.getElementById("griglia");
+
 
 inizia.addEventListener("click",
+
+
 function() {
-    let valueDifficolta = document.getElementById("difficolta-id").value;
-     //abbiamo estratto il valore dalle opzioni
-    
-    
-    
+
+    let difficolta = document.getElementById("difficolta-id").value;
+    let startConteggio = document.getElementById("conteggio").innerHTML = `<span>0</span>`
+    grid.innerHTML = ""
+
     
 
-    if (valueDifficolta == 7){
-      difficolta = "difficile";
+    let conteggio = 0;
+
+    if (difficolta == "facile"){
+        
+        for(let i = 1; i < 101; i++){
+            
+           let box = document.createElement("div");
+
+            let grid = document.getElementById("griglia");
+           
+            grid.appendChild(box);
+            box.classList.add("box10")
+            box.innerHTML = `<span>${i}</span>`
+            box.classList.remove("box9")
+            box.classList.remove("box7")
+            
+            box.addEventListener("click",
+                function () {
+                    this.classList.add("box-toccato")
+                    conteggio = conteggio +1;
+                    document.getElementById("conteggio").innerHTML = `<span>${conteggio}</span>`
+                }
+            )
+        }
         
     }
-    else if (valueDifficolta == 9){
-      difficolta = "media";
-        
+
+     else if (difficolta == "media"){
+        for (let y = 1; y < 82; y++) {
+            let box = document.createElement("div");
+
+           let grid = document.getElementById("griglia");
+           
+            grid.appendChild(box)
+            box.classList.add("box9")
+            box.innerHTML = `<span>${y}</span>`
+            box.classList.remove("box10")
+            box.classList.remove("box7")
+
+            box.addEventListener("click",
+                function () {
+                    this.classList.add("box-toccato")
+                    conteggio = conteggio + 1;
+                    document.getElementById("conteggio").innerHTML = `<span>${conteggio}</span>`
+                }
+            )
+     }
     }
+
     else {
-     difficolta = "facile";
-        
-    }
-    console.log(difficolta)
+        for (let f = 1; f < 50; f++) {
+            let box = document.createElement("div");
 
-    
+            let grid = document.getElementById("griglia");
+            grid.appendChild(box)
+            box.classList.add("box7")
+            box.innerHTML = `<span>${f}</span>`
+            box.classList.remove("box10")
+            box.classList.remove("box9")
+
+            box.addEventListener("click",
+                function () {
+                    this.classList.add("box-toccato")
+                    conteggio = conteggio + 1;
+                    document.getElementById("conteggio").innerHTML = `<span>${conteggio}</span>`
+                }
+            )
+        }
+    }
+
+
 }
 )
 
-
-for (i = 1; i > 50; i++) {
-    let grid = document.getElementById("griglia");
-    let box = document.createElement("div");
-    grid.appendChild(box)
-
-}
